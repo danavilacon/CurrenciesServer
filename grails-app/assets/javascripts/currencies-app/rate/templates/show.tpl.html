@@ -1,0 +1,14 @@
+<div crud-breadcrumbs="show"></div>
+<h2>Show Rate</h2>
+<div flash-message ></div>
+
+<table class="table table-bordered table-striped">
+    <tr display-field label="Conversion" value="ctrl.rate.conversion.toText"></tr>
+    <tr display-field label="Date" value="ctrl.rate.date | date: 'MMM d, yyyy'"></tr>
+    <tr display-field label="Value" value="ctrl.rate.value"></tr>
+</table>
+
+<div class="form-actions">
+    <button crud-button="edit" item="ctrl.rate"></button>
+    <button crud-button="delete" item="ctrl.rate" ></button>
+</div>

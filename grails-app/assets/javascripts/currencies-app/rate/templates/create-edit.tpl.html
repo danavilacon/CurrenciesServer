@@ -1,0 +1,28 @@
+<div crud-breadcrumbs="{{ctrl.rate.id ? 'edit' : 'create'}}"></div>
+<h2>
+    <span ng-hide="ctrl.rate.id">Create Rate</span>
+    <span ng-show="ctrl.rate.id">Edit Rate</span>
+</h2>
+
+<div flash-message ></div>
+
+<form name="form" class="form-horizontal" role="form" novalidate> 
+	
+	<div field-container label="Conversion" invalid="form.conversion.$invalid">
+		<select name="conversion" class="form-control" ng-model="ctrl.rate.conversion" required  ng-options="item.toText for item in ctrl.conversionList track by item.id"  ></select>
+	</div>
+	
+	<div field-container label="Date" invalid="form.date.$invalid">
+		<input name="date" type="text" class='form-control' date-field ng-model="ctrl.rate.date" required  />
+	</div>
+	
+	<div field-container label="Value" invalid="form.value.$invalid">
+		<input name="value" type="text" class='form-control' ng-model="ctrl.rate.value" required  />
+	</div>
+
+    <div>
+        <button crud-button="save" item="ctrl.rate" is-disabled="form.$invalid"></button>
+        <span ng-if="ctrl.rate.id"><button crud-button="delete" item="ctrl.rate"></button></span>
+    </div>
+
+</form>

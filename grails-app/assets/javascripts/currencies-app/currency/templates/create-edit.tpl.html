@@ -1,0 +1,24 @@
+<div crud-breadcrumbs="{{ctrl.currency.id ? 'edit' : 'create'}}"></div>
+<h2>
+    <span ng-hide="ctrl.currency.id">Create Currency</span>
+    <span ng-show="ctrl.currency.id">Edit Currency</span>
+</h2>
+
+<div flash-message ></div>
+
+<form name="form" class="form-horizontal" role="form" novalidate> 
+	
+	<div field-container label="Code" invalid="form.code.$invalid">
+		<input name="code" type="text" class='form-control' ng-model="ctrl.currency.code" required  />
+	</div>
+	
+	<div field-container label="Country" invalid="form.country.$invalid">
+		<input name="country" type="text" class='form-control' ng-model="ctrl.currency.country" required  />
+	</div>
+
+    <div>
+        <button crud-button="save" item="ctrl.currency" is-disabled="form.$invalid"></button>
+        <span ng-if="ctrl.currency.id"><button crud-button="delete" item="ctrl.currency"></button></span>
+    </div>
+
+</form>
