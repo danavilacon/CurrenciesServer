@@ -1,14 +1,16 @@
 class UrlMappings {
 
 	static mappings = {
-
-        						'/rate'(view: 'rate')
+        "/api/getrange/$fromdate/$todate/$fromcode/$tocode"(controller: "api", action: "getrange",method: "GET")
+        "/api/getlatest/$code"(controller: "api", action: "getlatest",method: "GET")
+        "/api/getconversion/$fromcode/$tocode/$value"(controller: "api", action: "getconversion",method: "GET")
+        '/rate'(view: 'rate')
 		'/api/rate'(resources: 'rate')
-'/conversion'(view: 'conversion')
+        '/conversion'(view: 'conversion')
 		'/api/conversion'(resources: 'conversion')
-'/currency'(view: 'currency')
+        '/currency'(view: 'currency')
 		'/api/currency'(resources: 'currency')
-"/$controller/$action?/$id?(.$format)?"{
+        "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here
             }
