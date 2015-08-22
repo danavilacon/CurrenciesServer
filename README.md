@@ -26,7 +26,7 @@ vagrant ssh
 ```
 vagrant ssh
 cd /CurrenciesServer/
-grails run-app
+gradle run
 ```
 
 ## Visit Application
@@ -34,6 +34,13 @@ grails run-app
 Visit URL
 ```
 http://192.168.33.20:8080/currencies
+```
+
+# Build WAR (production environment)
+```
+vagrant ssh
+cd /CurrenciesServer/
+gradle war 
 ```
 
 # PROBLEMS?
