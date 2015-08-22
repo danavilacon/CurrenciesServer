@@ -24,7 +24,7 @@ class BootStrap {
 		assert Conversion.count() == 6
 
 		// Rate
-		def today = new Date()
+		def today = new Date().clearTime()
 		def rateUsdEur = new Rate(conversion: conversionUsdEur,date: today, value: 0.8780170862125).save(flush: true)
 		def rateUsdClp = new Rate(conversion: conversionUsdClp,date: today, value: 0.0014347202295).save(flush: true)
 		def rateEurUsd = new Rate(conversion: conversionEurUsd,date: today, value: 1.13893).save(flush: true)
